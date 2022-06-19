@@ -9,6 +9,7 @@ Before you start dont forget these
 - on second terminal dont forget to run `php artisan queue:listen`
 
 You can check `php artisan send:email:subscribers {postId}`.
+You can check JsonResponseProvider.php to how did I use `macro`.
 
 I did not write test.
 
