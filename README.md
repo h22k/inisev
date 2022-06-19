@@ -11,6 +11,13 @@ Before you start dont forget these
 You can check `php artisan send:email:subscribers {postId}`.
 You can check JsonResponseProvider.php to how did I use `macro`.
 
+Used Laravel Magic
+- Provider
+- Macro
+- Model Binding
+- Dependency Injection
+- Inside Model Dispatch Event
+
 I did not write test.
 
 
