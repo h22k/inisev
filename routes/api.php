@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\SubscribeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\WebsiteController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +18,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('v1')->group(static function () {
+
+    Route::post('create-post/{website}', PostController::class); //invoke class.
+    Route::post('subscribe/{user}', SubscribeController::class); // invoke class
+
+    Route::post('signup', [UserController::class, 'signUp'])->name('sign-up');
+
+    Route::prefix('website')->group(static function () {
+        Route::post('/store', [WebsiteController::class, 'store'])->name('store');
+    });
+
 });
